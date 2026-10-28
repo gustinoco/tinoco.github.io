@@ -3,868 +3,194 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gustavo Tinoco · Mobile Engineer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg: #0a0a0b;
-      --surface: #111113;
-      --surface2: #18181c;
-      --border: rgba(255,255,255,0.07);
-      --accent: #ff6b00;
-      --accent2: #ff9d4d;
-      --text: #e8e6e1;
-      --muted: #6b6a68;
-      --faint: rgba(255,255,255,0.04);
+  <meta name="theme-color" content="#181818" />
+  <title>Gustavo Tinoco · Staff Engineer, IA e sistemas distribuídos</title>
+  <meta name="description" content="Gustavo Tinoco, Staff Engineer e professor na UFGD. Mais de 10 anos em engenharia de software, arquitetura, sistemas distribuídos e liderança técnica. Dourados, MS." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:title" content="Gustavo Tinoco · Staff Engineer" />
+  <meta property="og:description" content="Engenharia, sistemas distribuídos e pessoas. Conheça minha trajetória em produtos financeiros de alta escala e no ensino de programação." />
+  <meta property="og:url" content="https://tinoco.dev/" />
+  <meta property="og:image" content="https://tinoco.dev/assets/social.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Gustavo Tinoco — Staff Engineer, AI & Software Engineering, Sistemas Distribuídos" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="canonical" href="https://tinoco.dev/" />
+  <link rel="preload" href="assets/manrope.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="stylesheet" href="assets/site.css" />
+  <script src="assets/site.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": "https://tinoco.dev/#profile",
+    "url": "https://tinoco.dev/",
+    "name": "Gustavo Tinoco · Staff Engineer, IA e sistemas distribuídos",
+    "description": "Perfil profissional de Gustavo Tinoco, engenheiro de software e professor na UFGD, com mais de 10 anos de experiência em engenharia, arquitetura e liderança técnica.",
+    "inLanguage": "pt-BR",
+    "mainEntity": {
+      "@type": "Person",
+      "@id": "https://tinoco.dev/#gustavo-tinoco",
+      "name": "Gustavo Tinoco",
+      "url": "https://tinoco.dev/",
+      "description": "Staff Engineer e professor com experiência em produtos financeiros de alta escala, sistemas distribuídos e mentoria. Interesse em aplicar inteligência artificial à engenharia e à construção de produtos.",
+      "jobTitle": ["Engenheiro de software", "Professor substituto"],
+      "worksFor": {
+        "@type": "CollegeOrUniversity",
+        "name": "Universidade Federal da Grande Dourados",
+        "alternateName": "UFGD"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Dourados",
+        "addressRegion": "MS",
+        "addressCountry": "BR"
+      },
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Centro Universitário Senac"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Universidade Federal da Grande Dourados",
+          "alternateName": "UFGD"
+        }
+      ],
+      "knowsAbout": [
+        "Engenharia de software",
+        "Sistemas distribuídos",
+        "Arquitetura de software",
+        "Liderança técnica",
+        "Cloud computing",
+        "Ensino de programação"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/gustavotinoco",
+        "https://github.com/gustinoco"
+      ]
     }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'DM Mono', monospace;
-      font-size: 15px;
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.6;
-    }
-
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 48px;
-      border-bottom: 1px solid var(--border);
-      background: rgba(10,10,11,0.85);
-      backdrop-filter: blur(20px);
-    }
-
-    .nav-logo {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: 18px;
-      letter-spacing: -0.5px;
-      color: var(--text);
-      text-decoration: none;
-    }
-
-    .nav-logo span { color: var(--accent); }
-
-    .nav-links {
-      display: flex;
-      gap: 36px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover { color: var(--text); }
-
-    #hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 120px 48px 80px;
-      overflow: hidden;
-    }
-
-    .hero-grid-bg {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(var(--border) 1px, transparent 1px),
-        linear-gradient(90deg, var(--border) 1px, transparent 1px);
-      background-size: 60px 60px;
-      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
-      opacity: 0.4;
-    }
-
-    .hero-glow {
-      position: absolute;
-      top: -200px;
-      right: -200px;
-      width: 700px;
-      height: 700px;
-      background: radial-gradient(circle, rgba(255,107,0,0.12) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 900px;
-    }
-
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 28px;
-      opacity: 0;
-      animation: fadeUp 0.7s 0.1s forwards;
-    }
-
-    .hero-eyebrow::before {
-      content: '';
-      display: block;
-      width: 32px;
-      height: 1px;
-      background: var(--accent);
-    }
-
-    .hero-name {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: clamp(52px, 8vw, 96px);
-      line-height: 0.95;
-      letter-spacing: -3px;
-      margin-bottom: 16px;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.2s forwards;
-    }
-
-    .hero-name em {
-      font-family: 'Instrument Serif', serif;
-      font-style: italic;
-      color: var(--accent);
-      font-weight: 400;
-    }
-
-    .hero-title {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(18px, 3vw, 28px);
-      font-weight: 600;
-      color: var(--muted);
-      margin-bottom: 32px;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.3s forwards;
-    }
-
-    .hero-desc {
-      font-family: 'DM Mono', monospace;
-      font-size: 14px;
-      color: rgba(232,230,225,0.6);
-      max-width: 560px;
-      line-height: 1.8;
-      margin-bottom: 48px;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.4s forwards;
-    }
-
-    .hero-ctas {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.5s forwards;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 28px;
-      background: var(--accent);
-      color: #0a0a0b;
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      font-size: 13px;
-      letter-spacing: 0.05em;
-      text-decoration: none;
-      border-radius: 4px;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(255,107,0,0.35);
-    }
-
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 28px;
-      border: 1px solid var(--border);
-      color: var(--text);
-      font-family: 'Syne', sans-serif;
-      font-weight: 600;
-      font-size: 13px;
-      letter-spacing: 0.05em;
-      text-decoration: none;
-      border-radius: 4px;
-      transition: border-color 0.2s, background 0.2s;
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--accent);
-      background: rgba(255,107,0,0.06);
-    }
-
-    .hero-stats {
-      position: absolute;
-      bottom: 60px;
-      right: 48px;
-      display: flex;
-      gap: 48px;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.7s forwards;
-    }
-
-    .stat-item { text-align: right; }
-
-    .stat-num {
-      font-family: 'Syne', sans-serif;
-      font-size: 36px;
-      font-weight: 800;
-      color: var(--text);
-      line-height: 1;
-    }
-
-    .stat-num span { color: var(--accent); }
-
-    .stat-label {
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-top: 4px;
-    }
-
-    section { position: relative; z-index: 1; }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 48px;
-    }
-
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 64px;
-    }
-
-    .section-tag {
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent);
-    }
-
-    .section-line {
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
-
-    .section-num { font-size: 11px; color: var(--muted); }
-
-    .section-title {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: clamp(32px, 5vw, 56px);
-      letter-spacing: -2px;
-      line-height: 1;
-      margin-bottom: 48px;
-    }
-
-    /* ABOUT */
-    #about { padding: 120px 0; }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-    }
-
-    .about-text p {
-      color: rgba(232,230,225,0.7);
-      line-height: 1.9;
-      margin-bottom: 20px;
-      font-size: 14px;
-    }
-
-    .about-text p strong { color: var(--text); font-weight: 500; }
-
-    .tech-stack { display: flex; flex-direction: column; gap: 12px; }
-
-    .tech-category {
-      padding: 20px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background: var(--faint);
-      transition: border-color 0.2s;
-    }
-
-    .tech-category:hover { border-color: rgba(255,107,0,0.3); }
-
-    .tech-cat-label {
-      font-size: 10px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 10px;
-    }
-
-    .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-
-    .tech-tag {
-      padding: 4px 10px;
-      background: rgba(255,255,255,0.05);
-      border-radius: 3px;
-      font-size: 12px;
-      color: var(--text);
-    }
-
-    /* EXPERIENCE */
-    #experience { padding: 120px 0; background: var(--surface); }
-
-    .exp-timeline { position: relative; padding-left: 32px; }
-
-    .exp-timeline::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 8px; bottom: 8px;
-      width: 1px;
-      background: linear-gradient(to bottom, var(--accent), transparent);
-    }
-
-    .exp-item {
-      position: relative;
-      padding: 0 0 56px 40px;
-      opacity: 0;
-      transform: translateX(-16px);
-      transition: opacity 0.6s, transform 0.6s;
-    }
-
-    .exp-item.visible { opacity: 1; transform: translateX(0); }
-
-    .exp-dot {
-      position: absolute;
-      left: -4px;
-      top: 8px;
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 12px rgba(255,107,0,0.6);
-    }
-
-    .exp-dot.muted { background: var(--muted); box-shadow: none; }
-
-    .exp-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
-
-    .exp-company {
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      font-size: 18px;
-      color: var(--text);
-    }
-
-    .exp-badge {
-      padding: 2px 8px;
-      border-radius: 2px;
-      font-size: 10px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .exp-badge.current {
-      background: rgba(255,107,0,0.15);
-      color: var(--accent);
-      border: 1px solid rgba(255,107,0,0.3);
-    }
-
-    .exp-role { font-size: 14px; color: rgba(232,230,225,0.6); margin-bottom: 4px; }
-
-    .exp-period {
-      font-size: 11px;
-      color: var(--muted);
-      letter-spacing: 0.05em;
-      margin-bottom: 16px;
-    }
-
-    .exp-desc {
-      font-size: 13px;
-      color: rgba(232,230,225,0.6);
-      line-height: 1.8;
-      max-width: 640px;
-    }
-
-    /* SKILLS */
-    #skills { padding: 120px 0; }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .skill-card {
-      padding: 28px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background: var(--faint);
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.5s, transform 0.5s, border-color 0.2s, box-shadow 0.2s;
-    }
-
-    .skill-card.visible { opacity: 1; transform: translateY(0); }
-
-    .skill-card:hover {
-      border-color: rgba(255,107,0,0.25);
-      box-shadow: 0 8px 32px rgba(255,107,0,0.08);
-    }
-
-    .skill-icon { font-size: 28px; margin-bottom: 16px; }
-
-    .skill-name {
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      font-size: 16px;
-      margin-bottom: 10px;
-    }
-
-    .skill-desc { font-size: 12px; color: var(--muted); line-height: 1.7; }
-
-    /* EDUCATION */
-    #education { padding: 120px 0; background: var(--surface); }
-
-    .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-
-    .edu-card {
-      padding: 32px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background: var(--faint);
-      transition: border-color 0.2s;
-    }
-
-    .edu-card:hover { border-color: rgba(255,107,0,0.3); }
-
-    .edu-degree {
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      font-size: 17px;
-      margin-bottom: 8px;
-    }
-
-    .edu-school { color: var(--accent); font-size: 13px; margin-bottom: 6px; }
-    .edu-period { font-size: 11px; color: var(--muted); }
-
-    /* CONTACT */
-    #contact { padding: 120px 0; }
-
-    .contact-inner {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .contact-inner p { color: var(--muted); font-size: 14px; margin-bottom: 48px; }
-
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .contact-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 24px;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      color: var(--text);
-      text-decoration: none;
-      font-size: 13px;
-      transition: border-color 0.2s, background 0.2s, color 0.2s;
-    }
-
-    .contact-link:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      background: rgba(255,107,0,0.05);
-    }
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 32px 48px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    footer p { font-size: 12px; color: var(--muted); }
-    .footer-accent { color: var(--accent); }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
-
-    @media (max-width: 768px) {
-      nav { padding: 16px 24px; }
-      .nav-links { display: none; }
-      #hero { padding: 100px 24px 140px; }
-      .hero-stats { right: 24px; gap: 24px; }
-      .container { padding: 0 24px; }
-      .about-grid { grid-template-columns: 1fr; gap: 40px; }
-      .skills-grid { grid-template-columns: 1fr 1fr; }
-      .edu-grid { grid-template-columns: 1fr; }
-      footer { flex-direction: column; gap: 8px; text-align: center; }
-    }
-
-    @media (max-width: 480px) {
-      .skills-grid { grid-template-columns: 1fr; }
-      .hero-stats { flex-direction: column; gap: 16px; }
-    }
-  </style>
+  }
+  </script>
 </head>
 <body>
-
-  <nav>
-    <a href="#hero" class="nav-logo">GT<span>.</span></a>
-    <ul class="nav-links">
-      <li><a href="#about">Sobre</a></li>
-      <li><a href="#experience">Experiência</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#education">Formação</a></li>
-      <li><a href="#contact">Contato</a></li>
-    </ul>
-  </nav>
-
-  <section id="hero">
-    <div class="hero-grid-bg"></div>
-    <div class="hero-glow"></div>
-
-    <div class="hero-content">
-      <div class="hero-eyebrow">Mobile Engineer · São Paulo, BR</div>
-
-      <h1 class="hero-name">
-        Gustavo<br><em>Tinoco</em>
-      </h1>
-
-      <div class="hero-title">Especialista Mobile &amp; Cloud · Itaú Unibanco</div>
-
-      <p class="hero-desc">
-        Mais de 6 anos construindo soluções bancárias de alto impacto —
-        de apps mobile (iOS &amp; Android) a infraestruturas cloud escaláveis na AWS.
-        Liderando a evolução dos pagamentos digitais no maior banco da América Latina.
-      </p>
-
-      <div class="hero-ctas">
-        <a href="mailto:gustavotinocoo@gmail.com" class="btn-primary">
-          ✉ Falar comigo
-        </a>
-        <a href="https://www.linkedin.com/in/gustavotinoco" target="_blank" class="btn-secondary">
-          ↗ LinkedIn
-        </a>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Navegação principal">
+      <a href="#hero" class="nav-logo" aria-label="Gustavo Tinoco, início">gt<span aria-hidden="true">.</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links"><span class="menu-label">Menu</span><span class="menu-icon" aria-hidden="true"></span></button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">Sobre</a></li>
+        <li><a href="#experience">Trajetória</a></li>
+        <li><a href="#skills">Competências</a></li>
+        <li><a href="#education">Formação</a></li>
+        <li><a href="#contact" class="nav-contact">Vamos conversar <span aria-hidden="true">↗</span></a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main" tabindex="-1">
+    <section id="hero" class="hero container" aria-labelledby="hero-name">
+      <div class="hero-topline"><span>Engenharia de software &amp; ensino</span><span>Dourados, MS · Brasil</span></div>
+      <div class="hero-grid">
+        <div class="hero-content">
+          <p class="eyebrow">Staff Engineer</p>
+          <h1 id="hero-name" class="hero-name">Gustavo<br>Tinoco<span aria-hidden="true">.</span></h1>
+          <p class="hero-title">AI &amp; Software Engineering<br>Sistemas distribuídos</p>
+          <p class="hero-desc">Conecto engenharia, produto e negócio para construir sistemas e desenvolver pessoas.</p>
+          <a href="mailto:gustavotinocoo@gmail.com" class="btn-primary">Falar comigo <span aria-hidden="true">↗</span></a>
+        </div>
+        <aside class="hero-note" aria-label="Atuação atual">
+          <span class="note-label"><span class="status-dot" aria-hidden="true"></span> Atualmente</span>
+          <p class="note-title">Da experiência em produção à sala de aula.</p>
+          <p>Professor substituto na UFGD, ensinando programação com Python, lógica e resolução de problemas aplicados à engenharia.</p>
+          <a class="text-link" href="#experience">Conheça minha trajetória <span aria-hidden="true">↘</span></a>
+          <div class="note-footer"><span>UFGD</span><span>Desde set/2026</span></div>
+        </aside>
       </div>
-    </div>
-
-    <div class="hero-stats">
-      <div class="stat-item">
-        <div class="stat-num">10<span>+</span></div>
-        <div class="stat-label">Anos de exp.</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">2<span>+</span></div>
-        <div class="stat-label">Bancos Top 5</div>
-      </div>
-    </div>
-  </section>
-
-  <section id="about">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Sobre</span>
-        <div class="section-line"></div>
-        <span class="section-num">01</span>
-      </div>
-
+    </section>
+    <section id="about" class="section container" aria-labelledby="about-title">
+      <div class="section-header"><span class="section-tag">01 / Sobre</span><span class="section-caption">O contexto vem antes da ferramenta.</span></div>
       <div class="about-grid">
+        <h2 id="about-title" class="section-title">Engenharia com<br>visão do todo.</h2>
         <div class="about-text">
-          <p>
-            Sou um engenheiro mobile com foco em <strong>desenvolvimento iOS e Android</strong>,
-            atuando há quase 6 anos no Itaú Unibanco. Atualmente como <strong>Especialista I</strong>,
-            lidero entregas de frontend e backend (BFF) na área de pagamentos.
-          </p>
-          <p>
-            Minha atuação vai além do código: coordeno squads, defino arquitetura e
-            garanto que cada release entregue segurança e experiência de alto nível
-            para milhões de usuários.
-          </p>
-          <p>
-            Sou apaixonado por <strong>reaproveitamento de aplicações nativas</strong>
-            e pela integração de soluções cloud modernas para criar infraestruturas
-            robustas e eficientes.
-          </p>
-        </div>
-
-        <div class="tech-stack">
-          <div class="tech-category">
-            <div class="tech-cat-label">Mobile</div>
-            <div class="tech-tags">
-              <span class="tech-tag">iOS</span>
-              <span class="tech-tag">Android</span>
-              <span class="tech-tag">Swift</span>
-              <span class="tech-tag">Kotlin</span>
-              <span class="tech-tag">Bankline</span>
-            </div>
-          </div>
-          <div class="tech-category">
-            <div class="tech-cat-label">Cloud &amp; Backend</div>
-            <div class="tech-tags">
-              <span class="tech-tag">AWS</span>
-              <span class="tech-tag">API Gateway</span>
-              <span class="tech-tag">EKS</span>
-              <span class="tech-tag">ECS</span>
-              <span class="tech-tag">EC2</span>
-              <span class="tech-tag">Redis</span>
-              <span class="tech-tag">BFF</span>
-            </div>
-          </div>
-          <div class="tech-category">
-            <div class="tech-cat-label">Ferramentas</div>
-            <div class="tech-tags">
-              <span class="tech-tag">Git</span>
-              <span class="tech-tag">PHP</span>
-              <span class="tech-tag">Java</span>
-              <span class="tech-tag">Agile</span>
-              <span class="tech-tag">Tech Lead</span>
-            </div>
-          </div>
+          <p class="lead">Sou engenheiro de software e professor, com mais de 10 anos de experiência e uma trajetória em produtos financeiros de alta escala.</p>
+          <p>Atuei como referência técnica transversal entre squads, conectando arquitetura, sistemas distribuídos e liderança técnica às necessidades de produto e negócio. Mentoria, revisão de código e troca de conhecimento fazem parte dessa atuação.</p>
+          <p>Meu interesse hoje também está em <strong>aplicar inteligência artificial à engenharia e à construção de produtos</strong>, combinando essa direção com a experiência em sistemas de produção.</p>
+          <p>Escolho linguagens e ferramentas de acordo com o problema e o contexto.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section id="experience">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Experiência</span>
-        <div class="section-line"></div>
-        <span class="section-num">02</span>
-      </div>
-
+    </section>
+    <section id="experience" class="section container" aria-labelledby="experience-title">
+      <div class="section-header"><span class="section-tag">02 / Trajetória</span><span class="section-caption">Da arquitetura ao aprendizado compartilhado.</span></div>
+      <h2 id="experience-title" class="section-title">Experiência que<br>se transforma em impacto.</h2>
       <div class="exp-timeline">
-
-        <div class="exp-item">
-          <div class="exp-dot"></div>
-          <div class="exp-meta">
-            <span class="exp-company">Itaú Unibanco</span>
-            <span class="exp-badge current">Atual</span>
+        <article class="exp-item">
+          <div class="exp-context"><p class="exp-period"><time datetime="2026-09">Set/2026</time> — atual</p><p>Dourados, MS</p><span class="current-label">Atuação atual</span></div>
+          <div class="exp-content"><h3>Universidade Federal da Grande Dourados <span class="company-short">UFGD</span></h3><p class="exp-role">Professor substituto</p>
+            <ul class="exp-desc"><li>Docência em Programação para Engenharia, com aulas e atividades práticas em Python, lógica e resolução de problemas aplicados.</li><li>Preparação de exercícios e avaliações, conectando fundamentos acadêmicos a práticas de desenvolvimento de software.</li></ul>
           </div>
-          <div class="exp-role">Especialista I · Frontend &amp; Backend Lead</div>
-          <div class="exp-period">mai 2024 → presente · São Paulo, SP</div>
-          <p class="exp-desc">
-            Liderança técnica das entregas de frontend (Android, iOS, Bankline) e backend (BFF)
-            na comunidade de pagamentos. Arquitetura e implementação de soluções AWS (API Gateway,
-            EKS, ECS, Redis, EC2), sempre focando em escalabilidade, segurança e experiência do usuário.
-          </p>
-        </div>
-
-        <div class="exp-item">
-          <div class="exp-dot"></div>
-          <div class="exp-meta">
-            <span class="exp-company">Itaú Unibanco</span>
+        </article>
+        <article class="exp-item">
+          <div class="exp-context"><p class="exp-period"><time datetime="2024-05">Mai/2024</time> — <time datetime="2026-04">Abr/2026</time></p><p>São Paulo, SP</p></div>
+          <div class="exp-content"><h3>Itaú Unibanco</h3><p class="exp-role">Especialista I · Staff Engineer</p>
+            <ul class="exp-desc"><li>Referência técnica transversal para múltiplas squads de pagamentos Pessoa Física, em sistemas com requisitos críticos de escala, performance e disponibilidade.</li><li>Liderança de decisões de arquitetura em mobile e backend (BFF), promovendo consistência entre plataformas e alinhamento entre times.</li><li>Atuação em AWS, com observabilidade, CI/CD e SLOs; desenvolvimento de ferramentas e automações internas para engenharia.</li><li>Mentoria de engenheiros, discussões técnicas, revisões de código e disseminação de práticas de qualidade e segurança.</li></ul>
           </div>
-          <div class="exp-role">Analista de Engenharia TI Sênior · Tech Lead</div>
-          <div class="exp-period">mai 2020 → mai 2024 · 4 anos · São Paulo, SP</div>
-          <p class="exp-desc">
-            Atuação ampla na área de pagamentos com foco em desenvolvimento mobile Android.
-            Exerceu o papel de Tech Lead, conduzindo decisões arquiteturais e
-            liderança do time de engenharia.
-          </p>
-        </div>
-
-        <div class="exp-item">
-          <div class="exp-dot muted"></div>
-          <div class="exp-meta">
-            <span class="exp-company">Santander Brasil</span>
+        </article>
+        <article class="exp-item">
+          <div class="exp-context"><p class="exp-period"><time datetime="2020-05">Mai/2020</time> — <time datetime="2024-05">Mai/2024</time></p><p>São Paulo, SP</p></div>
+          <div class="exp-content"><h3>Itaú Unibanco</h3><p class="exp-role">Analista de Engenharia TI Sênior · Tech Lead</p>
+            <ul class="exp-desc"><li>Liderança técnica de mais de 12 engenheiros na modularização do app Itaú Empresas: evolução de um monolito Android para mais de 80 módulos, com redução de aproximadamente 40% no tempo de build.</li><li>Liderança do Pix Automático, da concepção à entrega, integrando mobile e backend em contexto regulado.</li><li>Atuação em Débito Automático e Recargas, incluindo arquitetura modular e decisões sobre APIs, contratos e fluxos distribuídos com times de backend e plataforma.</li></ul>
+            <p class="exp-highlight"><span aria-hidden="true">↳</span> Mais de 12 engenheiros. Uma evolução de arquitetura compartilhada.</p>
           </div>
-          <div class="exp-role">Desenvolvedor de Tecnologia Mobile Android</div>
-          <div class="exp-period">jul 2019 → mai 2020 · 11 meses</div>
-          <p class="exp-desc">
-            Desenvolvimento mobile Android no Santander Brasil, fortalecendo
-            a base em aplicações bancárias de grande escala.
-          </p>
-        </div>
-
-        <div class="exp-item">
-          <div class="exp-dot muted"></div>
-          <div class="exp-meta">
-            <span class="exp-company">Santander Brasil</span>
+        </article>
+        <article class="exp-item">
+          <div class="exp-context"><p class="exp-period"><time datetime="2018-11">Nov/2018</time> — <time datetime="2020-05">Mai/2020</time></p><p>São Paulo, SP</p></div>
+          <div class="exp-content"><h3>Santander Brasil</h3><p class="exp-role">Desenvolvedor de Tecnologia <span>· via Resource IT Solutions</span></p>
+            <ul class="exp-desc"><li>Desenvolvimento de aplicações Android para produtos financeiros de alto tráfego, integração com APIs e manutenção de sistemas em produção.</li></ul>
           </div>
-          <div class="exp-role">Desenvolvedor Mobile Android · via Resource IT Solutions</div>
-          <div class="exp-period">jul 2019 → mai 2020 · Resource IT → efetivado Santander · São Paulo, SP</div>
-          <p class="exp-desc">
-            Iniciou como programador mobile Android alocado pelo Resource IT Solutions no Santander Brasil,
-            passando posteriormente a integrar o quadro direto do banco. Atuação em desenvolvimento
-            de aplicações bancárias de grande escala.
-          </p>
-        </div>
-
-        <div class="exp-item">
-          <div class="exp-dot muted"></div>
-          <div class="exp-meta">
-            <span class="exp-company">e-Deploy</span>
-          </div>
-          <div class="exp-role">Desenvolvedor de Software</div>
-          <div class="exp-period">jan 2017 → nov 2018 · 1 ano 11 meses · Dourados, MS</div>
-          <p class="exp-desc">
-            Desenvolvimento de software full cycle, início da jornada profissional
-            em engenharia de software.
-          </p>
-        </div>
-
+        </article>
       </div>
-    </div>
-  </section>
-
-  <section id="skills">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Especialidades</span>
-        <div class="section-line"></div>
-        <span class="section-num">03</span>
+    </section>
+    <section id="skills" class="section container" aria-labelledby="skills-title">
+      <div class="section-header"><span class="section-tag">03 / Competências</span><span class="section-caption">Ferramentas a serviço do problema.</span></div>
+      <div class="skills-layout">
+        <div class="skills-intro"><h2 id="skills-title" class="section-title">Profundidade técnica.<br>Atuação transversal.</h2><p>Da aplicação à infraestrutura, com decisões de arquitetura que conectam plataformas, times e objetivos de negócio.</p></div>
+        <dl class="skills-list">
+          <div class="skill-row"><dt>Engenharia e arquitetura</dt><dd>Sistemas distribuídos · Microsserviços · Arquitetura orientada a eventos · APIs REST e GraphQL · BFF · Clean Architecture · DDD</dd></div>
+          <div class="skill-row"><dt>Cloud e práticas</dt><dd>AWS · Kubernetes · Docker · CI/CD · Observabilidade · SLIs/SLOs · Testes automatizados · Revisão de código</dd></div>
+          <div class="skill-row"><dt>Linguagens e plataformas</dt><dd>Python · JavaScript/TypeScript · Node.js · NestJS · Spring · React · Kotlin · Java · Swift · Android · iOS · React Native</dd></div>
+          <div class="skill-row"><dt>Liderança técnica</dt><dd>Mentoria · Alinhamento com produto e negócio · Influência técnica entre times</dd></div>
+        </dl>
       </div>
-
-      <div class="skills-grid">
-        <div class="skill-card">
-          <div class="skill-icon">📱</div>
-          <div class="skill-name">Mobile (iOS &amp; Android)</div>
-          <p class="skill-desc">Desenvolvimento nativo de alto desempenho para plataformas Apple e Google, com foco em apps bancários de missão crítica.</p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">☁️</div>
-          <div class="skill-name">AWS Cloud</div>
-          <p class="skill-desc">Arquitetura de soluções escaláveis usando API Gateway, EKS, ECS, EC2 e Redis para infraestruturas bancárias robustas.</p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">🏗️</div>
-          <div class="skill-name">Arquitetura BFF</div>
-          <p class="skill-desc">Design e implementação de Backend for Frontend, otimizando a comunicação entre camadas mobile e serviços de negócio.</p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">👥</div>
-          <div class="skill-name">Tech Lead</div>
-          <p class="skill-desc">Liderança técnica de squads multidisciplinares, definindo padrões, conduzindo code reviews e garantindo qualidade das entregas.</p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">💳</div>
-          <div class="skill-name">Pagamentos Digitais</div>
-          <p class="skill-desc">Expertise em sistemas de pagamento bancário — PIX, transferências, autenticação e segurança em transações de alta volumetria.</p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">🔒</div>
-          <div class="skill-name">Segurança Bancária</div>
-          <p class="skill-desc">Implementação de soluções que garantem conformidade regulatória e proteção das transações em ambiente financeiro.</p>
+    </section>
+    <section id="education" class="section container" aria-labelledby="education-title">
+      <div class="section-header"><span class="section-tag">04 / Formação</span><span class="section-caption">Fundamentos para continuar aprendendo.</span></div>
+      <div class="education-layout">
+        <h2 id="education-title" class="section-title">Formação<br>e idiomas.</h2>
+        <div class="education-list">
+          <article class="edu-item"><p class="edu-period">2022 — 2023</p><h3>Cloud Computing</h3><p>Pós-graduação · Centro Universitário Senac</p></article>
+          <article class="edu-item"><p class="edu-period">2011 — 2017</p><h3>Sistemas de Informação</h3><p>Bacharelado · Universidade Federal da Grande Dourados</p></article>
+          <dl class="languages"><div><dt>Português</dt><dd>Nativo</dd></div><div><dt>Inglês</dt><dd>Avançado</dd></div></dl>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section id="education">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Formação</span>
-        <div class="section-line"></div>
-        <span class="section-num">04</span>
-      </div>
-
-      <div class="edu-grid">
-        <div class="edu-card">
-          <div class="edu-degree">Pós-graduação · Cloud Computing</div>
-          <div class="edu-school">Centro Universitário Senac</div>
-          <div class="edu-period">jan 2022 – jan 2023</div>
-        </div>
-        <div class="edu-card">
-          <div class="edu-degree">Bacharelado · Sistemas de Informação</div>
-          <div class="edu-school">UFGD – Universidade Federal da Grande Dourados</div>
-          <div class="edu-period">2011 – 2017</div>
+    </section>
+    <section id="contact" class="contact-section" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-header"><span class="section-tag">05 / Contato</span><span class="section-caption">Dourados, MS · Brasil</span></div>
+        <div class="contact-grid">
+          <div><h2 id="contact-title" class="section-title">Boas conversas<br>constroem caminhos.</h2><p>Vamos falar sobre engenharia de software, inteligência artificial, produtos ou ensino.</p></div>
+          <address class="contact-links">
+            <a class="contact-link" href="mailto:gustavotinocoo@gmail.com"><span><small>E-mail</small>gustavotinocoo@gmail.com</span><span aria-hidden="true">↗</span></a>
+            <a class="contact-link" href="https://www.linkedin.com/in/gustavotinoco" target="_blank" rel="noopener noreferrer"><span><small>LinkedIn</small>in/gustavotinoco</span><span aria-hidden="true">↗</span><span class="sr-only"> (abre em nova aba)</span></a>
+            <a class="contact-link" href="https://github.com/gustinoco" target="_blank" rel="noopener noreferrer"><span><small>GitHub</small>github.com/gustinoco</span><span aria-hidden="true">↗</span><span class="sr-only"> (abre em nova aba)</span></a>
+            <a class="contact-link" href="https://wa.me/5511992394006" target="_blank" rel="noopener noreferrer"><span><small>WhatsApp</small>Conversar pelo WhatsApp</span><span aria-hidden="true">↗</span><span class="sr-only"> (abre em nova aba)</span></a>
+          </address>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container">
-      <div class="contact-inner">
-        <div class="section-header" style="justify-content:center; margin-bottom:32px;">
-          <span class="section-tag">Contato</span>
-        </div>
-        <h2 class="section-title">Vamos<br><em style="font-family:'Instrument Serif',serif;font-style:italic;color:var(--accent)">conversar</em></h2>
-        <p>Aberto a oportunidades, projetos e conversas sobre tech, mobile e cloud.</p>
-        <div class="contact-links">
-          <a href="mailto:gustavotinocoo@gmail.com" class="contact-link">✉ gustavotinocoo@gmail.com</a>
-          <a href="https://www.linkedin.com/in/gustavotinoco" target="_blank" class="contact-link">↗ LinkedIn</a>
-          <a href="tel:+5511992394006" class="contact-link">📞 +55 11 99239-4006</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2026 <span class="footer-accent">Gustavo Tinoco</span> · Mobile Engineer</p>
-    <p>Feito com cuidado · São Paulo, BR</p>
-  </footer>
-
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('visible'), i * 80);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.exp-item, .skill-card').forEach(el => observer.observe(el));
-
-    document.querySelectorAll('.skill-card').forEach((card, i) => {
-      card.style.transitionDelay = `${i * 0.07}s`;
-    });
-  </script>
-
+    </section>
+  </main>
+  <footer class="container site-footer"><p>© 2026 Gustavo Tinoco</p><p>Engenharia, pessoas e conhecimento.</p><a href="#hero">Voltar ao início <span aria-hidden="true">↑</span></a></footer>
 </body>
 </html>
